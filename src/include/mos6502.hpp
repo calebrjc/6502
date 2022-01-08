@@ -5,9 +5,10 @@
 #define CALEBRJC_MOS6502_MOS6502_HPP_
 
 #include "common.hpp"
+#include "bus.hpp"
 
 namespace calebrjc::MOS6502 {
-    class MOS6502 {
+    class MOS6502 : public Bus::Controller {
       public:
         // Constructs an instance of a MOS6502 emulation
         MOS6502();
