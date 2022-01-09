@@ -4,18 +4,13 @@
 #ifndef CALEBRJC_MOS6502_MOS6502_HPP_
 #define CALEBRJC_MOS6502_MOS6502_HPP_
 
-#include "common.hpp"
 #include "bus.hpp"
+#include "common.hpp"
 
 namespace calebrjc::MOS6502 {
+    // Represents the MOS 6502 microprocessor
     class MOS6502 : public Bus::Controller {
       public:
-        // Constructs an instance of a MOS6502 emulation
-        MOS6502();
-
-        // Destructs an instance of a MOS6502 emulation
-        ~MOS6502();
-
         // General-purpose registers
         Byte accumulator = 0x00;
         Byte index_X     = 0x00;
@@ -128,10 +123,10 @@ namespace calebrjc::MOS6502 {
 
         // Captures illegal opcodes
         Byte XXX();
-        
+
         // Allows processor status flags to be read from and written to conveniently
-        Byte get_status_flag(StatusFlags flag);
-        Byte set_status_flag(StatusFlags flag, bool value);
+        Byte read_status_flag(StatusFlags flag);
+        Byte write_status_flag(StatusFlags flag, bool value);
     };
 }  // namespace calebrjc::MOS6502
 

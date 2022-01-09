@@ -5,6 +5,8 @@
 CXX      = g++
 CXXFLAGS = -Wall -Werror --pedantic-errors -g -std=c++17
 MKDIR    = mkdir
+RM       = rm
+RMFLAGS  = -rf
 
 # Files and directories
 EXE = emulator
@@ -36,4 +38,4 @@ $(BIN) $(OBJ):
 	$(MKDIR) $@
 
 clean:
-	$(RM) -r bin obj
+	$(RM) $(RMFLAGS) bin obj
