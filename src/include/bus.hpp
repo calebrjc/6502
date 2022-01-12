@@ -37,12 +37,17 @@ namespace calebrjc::MOS6502 {
         // to it by the bus
         class Device {
           public:
+            // This allows the bus to instruct devices to handle reads and writes without exposing
+            // explicit read and write functionality to anything else
+            friend class Bus;
+
             // Constructs a bus device
             Device(AddressRange<Word> range) : address_range(range) {}
 
             // Represents the range of addresses that this device is sensitive to
             AddressRange<Word> address_range;
 
+          private:
             // Handles a read request to this device at the specified address
             virtual const Byte handle_read(Word address) = 0;
 

@@ -44,21 +44,22 @@ namespace calebrjc::MOS6502 {
     }
 
     Bus::Device *Bus::get_sensitive_device(Word address) {
-        // Attempt to retrieve a handle (iterator) to the sensitive element
-        auto is_sensitive = [&](Device *device) { return device->address_range.contains(address); };
-        auto sensitive_device_itr = std::find_if(devices.begin(), devices.end(), is_sensitive);
+        for (Device *device : devices) {
+            if (device->address_range.contains(address)) {
+                return device;
+            }
+        }
 
-        return (sensitive_device_itr != devices.end()) ? *sensitive_device_itr : nullptr;
+        return nullptr;
     }
 
     bool Bus::is_viable_candidate(Device *device) {
-        // Attempt to retrieve a handle (iterator) to a device with an address range that intersects
-        // the candidate device
-        auto has_intersection = [&](Device *other) {
-            return device->address_range.intersects(other->address_range);
-        };
-        auto sensitive_device_itr = std::find_if(devices.begin(), devices.end(), has_intersection);
+        for (Device *d : devices) {
+            if (d->address_range.intersects(device->address_range)) {
+                return false;
+            }
+        }
 
-        return sensitive_device_itr != devices.end();
+        return true;
     }
 }  // namespace calebrjc::MOS6502

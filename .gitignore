@@ -32,3 +32,6 @@ bin/
 *.exe
 *.out
 *.app
+
+# Editor-specific Configurations
+.vscode/
