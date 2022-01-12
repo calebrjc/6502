@@ -9,6 +9,7 @@
 #include "mos6502.hpp"
 #include "ram.hpp"
 #include "rom_loader.hpp"
+#include "util.hpp"
 
 int main(int argc, char *argv[]) {
     using namespace calebrjc::MOS6502;
@@ -22,7 +23,7 @@ int main(int argc, char *argv[]) {
     bus.add_device(&ram);
     bus.set_controller(&loader);
     loader.load_rom("test_roms/nestest.nes");
-    std::cout << std::hex << ((int)loader.read(0x4000) & 0x000000FF) << "\n";
+    std::cout << std::hex << byte_to_int(loader.read(0x8000)) << "\n";
     bus.set_controller(&cpu);
 
     return EXIT_SUCCESS;

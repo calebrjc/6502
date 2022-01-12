@@ -26,7 +26,7 @@ namespace calebrjc::MOS6502 {
             write(i + 0x8000, program_memory[i]);
             write(i + 0xC000, program_memory[i]);
         }
-        
+
         /*
         Word current_line = 0x8000 - 16;
         for (size_t i = 0x8000; i <= 0xFFFF; i++) {

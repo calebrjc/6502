@@ -6,8 +6,8 @@
 
 #include "common.hpp"
 
-int byte_to_int(Byte byte) { return ((int)byte & 0x000000FF); }
+int byte_to_int(Byte byte);
 
-int word_to_int(Word word) { return ((int)word & 0x0000FFFF); }
+int word_to_int(Word word);
 
 #endif  // CALEBRJC_MOS6502_UTIL_HPP_
