@@ -1,6 +1,3 @@
-// File: bus.cpp
-// Author(s): Caleb Johnson-Cantrell
-
 #include <algorithm>
 
 #include "bus.hpp"

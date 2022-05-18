@@ -1,8 +1,5 @@
-// File: include/ram.hpp
-// Author(s): Caleb Johnson-Cantrell
-
-#ifndef CALEBRJC_MOS6502_RAM_HPP_
-#define CALEBRJC_MOS6502_RAM_HPP_
+#ifndef CALEBRJC_6502_RAM_HPP_
+#define CALEBRJC_6502_RAM_HPP_
 
 #include <array>
 
@@ -29,4 +26,4 @@ namespace calebrjc::MOS6502 {
     };
 }  // namespace calebrjc::MOS6502
 
-#endif  // CALEBRJC_MOS6502_RAM_HPP_
+#endif  // CALEBRJC_6502_RAM_HPP_

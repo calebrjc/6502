@@ -1,8 +1,5 @@
-// File: include/mos6502.hpp
-// Author(s): Caleb Johnson-Cantrell
-
-#ifndef CALEBRJC_MOS6502_MOS6502_HPP_
-#define CALEBRJC_MOS6502_MOS6502_HPP_
+#ifndef CALEBRJC_6502_MOS6502_HPP_
+#define CALEBRJC_6502_MOS6502_HPP_
 
 #include "bus.hpp"
 #include "common.hpp"
@@ -12,14 +9,14 @@ namespace calebrjc::MOS6502 {
     class MOS6502 : public Bus::Controller {
       public:
         // General-purpose registers
-        Byte accumulator = 0x00;
-        Byte index_X     = 0x00;
-        Byte index_Y     = 0x00;
+        Byte A = 0x00;
+        Byte X = 0x00;
+        Byte Y = 0x00;
 
         // System registers
-        Word program_counter = 0x0000;
-        Byte stack_pointer   = 0x00;
-        Byte status          = 0x00;
+        Word PC     = 0x0000;
+        Byte SP     = 0x00;
+        Byte status = 0x00;
 
         // Processor status flags
         enum StatusFlags {
@@ -130,4 +127,4 @@ namespace calebrjc::MOS6502 {
     };
 }  // namespace calebrjc::MOS6502
 
-#endif  // CALEBRJC_MOS6502_MOS6502_HPP_
+#endif  // CALEBRJC_6502_MOS6502_HPP_

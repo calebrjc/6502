@@ -1,6 +1,3 @@
-// File: ram.cpp
-// Author(s): Caleb Johnson-Cantrell
-
 #include "ram.hpp"
 
 namespace calebrjc::MOS6502 {
